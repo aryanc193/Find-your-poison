@@ -26,12 +26,12 @@ app.get("/get-drink", async (req, res) => {
       return res.json({ drinks: [] });
     }
 
-    console.log("Fetching data from:", API_URL + query); // ✅ Log API URL
+    // console.log("Fetching data from:", API_URL + query); //  Log API URL
 
     const response = await axios.get(API_URL + query);
     const drinks = response.data.drinks || [];
 
-    console.log("Drinks fetched:", JSON.stringify(drinks, null, 2)); // ✅ Log drink data
+    // console.log("Drinks fetched:", JSON.stringify(drinks, null, 2)); // Log drink data
 
     res.json({ drinks }); // ✅ Send response
   } catch (error) {
@@ -41,7 +41,7 @@ app.get("/get-drink", async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+  // console.log(`Server is running on port ${port}`);
 });
 
 {
