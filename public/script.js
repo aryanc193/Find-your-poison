@@ -51,6 +51,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       console.log("Response from server:", data);
       updateDrinkResults(data.drinks);
+
+      form.reset();
     } catch (error) {
       console.error("Error fetching data:", error);
     }

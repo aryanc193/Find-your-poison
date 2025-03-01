@@ -10,6 +10,7 @@ body {
   flex-direction: column;
   box-sizing: border-box;
   overflow: hidden;
+  height: 100vh;
 }
 h3 {
   color: white;
@@ -46,26 +47,28 @@ h3 {
 
 /* 🛠 Fix the drink results area */
 .drinkInfo {
-  width: 99vw;
-  min-height: 360px; /* ✅ Ensures a minimum height */
-  max-height: 360px; /* ✅ Prevents infinite expansion */
-  overflow-y: auto; /* ✅ Enables scrolling if too many drinks */
+  width: 95vw;
+  height: 80vh; /* ✅ Makes it take a good portion of the screen */
   font-family: "Bungee", sans-serif;
   background-color: rgba(0, 0, 0, 0.8);
   padding: 2%;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden; /* ✅ Prevents multiple scrollbars */
 }
 
 /* 🛠 Fix the drink results layout */
 #drinkResults {
   display: flex;
-  flex-wrap: wrap; /* ✅ Wraps drinks into rows */
+  flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
-  max-height: 550px; /* ✅ Prevents the entire page from expanding */
-  overflow-y: auto; /* ✅ Enables scrolling for long lists */
-  
+  padding-bottom: 200px; /* ✅ Prevents last card from being cut off */
+  overflow-y: auto; /* ✅ Enables scrolling only inside this box */
 }
+
 
 /* 🛠 Each drink card styling */
 .drink-card {
