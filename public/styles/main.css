@@ -1,0 +1,287 @@
+:root {
+  --card-height: 100vh;
+  --card-width: 100vw;
+}
+
+body {
+  background: #212534;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+h3 {
+  color: white;
+  font-family: "Bungee";
+  font-size: xx-large;
+  margin-top: 10px;
+  -webkit-text-stroke: 1px purple;
+}
+.card {
+  background: url("../images/bar3.gif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat-y;
+  width: 100%;
+  height: 500%;
+  position: relative;
+  border-radius: 6px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5em;
+  color: #fff;
+}
+
+.main {
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 🛠 Fix the drink results area */
+.drinkInfo {
+  width: 99vw;
+  min-height: 360px; /* ✅ Ensures a minimum height */
+  max-height: 360px; /* ✅ Prevents infinite expansion */
+  overflow-y: auto; /* ✅ Enables scrolling if too many drinks */
+  font-family: "Bungee", sans-serif;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 2%;
+  border-radius: 10px;
+}
+
+/* 🛠 Fix the drink results layout */
+#drinkResults {
+  display: flex;
+  flex-wrap: wrap; /* ✅ Wraps drinks into rows */
+  gap: 20px;
+  justify-content: center;
+  max-height: 550px; /* ✅ Prevents the entire page from expanding */
+  overflow-y: auto; /* ✅ Enables scrolling for long lists */
+  
+}
+
+/* 🛠 Each drink card styling */
+.drink-card {
+  display: flex;
+  align-items: center;
+  background: rgba(243, 173, 255, 0.724);
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  width: 90%;
+  max-width: 500px;
+}
+
+.drink-text {
+  flex: 1;
+}
+
+.drink-image img {
+  width: 120px;
+  height: auto;
+  border-radius: 8px;
+  margin-left: 20px;
+}
+
+.drink-card:hover {
+  transform: scale(1.02);
+}
+
+.drink-text h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #ff0000;
+  align-self: center;
+  text-align: center;
+}
+
+.drink-text span {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #fff;
+}
+
+.drink-text p {
+  margin: 5px 0;
+  font-family: "Moon Dance";
+}
+
+.filterAlc {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.myForm {
+  background-color: #00000088;
+  padding: 5px;
+  border: 3px solid white;
+  box-shadow: 2px 1px 20px purple;
+
+  border-radius: 5px;
+  width: 93%;
+  font-family: "Bungee";
+}
+
+form {
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fields{
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+input[type = "submit"]{
+  border: 2px solid purple;
+  box-shadow: 2px 1px 20px purple;
+  border-radius: 5px;
+  width: 60px;
+  height: 30px;
+  font-family: "Roboto";
+  text-transform:uppercase;
+  text-align: center;
+  padding: 2%;
+  font-weight: 500;
+  color: white;
+  background-color: #000;
+  text-shadow: 
+    -2px -2px 0 purple,  
+     2px -2px 0 purple,  
+    -2px  2px 0 purple,  
+     2px  2px 0 purple;
+}
+
+input[type="text"] {
+  width: 15%;
+  height: 1%;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+  font-size: 20px;
+  font-family: "Bungee";
+  background-color: #00000088;
+}
+
+#filterButton {
+  align-self: center;
+  width: 50px;
+  border: 2px solid white;
+  border-radius: 10px;
+  height: 30px;
+  color: white;
+  font-family: "Bungee";
+  background: linear-gradient(to right, #ff0000 0%, #630000 100%);
+}
+
+/*.card:hover {
+  color: rgb(255, 255, 255);
+  transition: color 1s;
+}
+.card:hover:before,
+.card:hover:after {
+  animation: none;
+  opacity: 0;
+}
+
+ .card::before {
+  content: "";
+  width: 104%;
+  height: 102%;
+  border-radius: 8px;
+  background-image: linear-gradient(
+    var(--rotate),
+    #5ddcff,
+    #3c67e3 43%,
+    #4e00c2
+  );
+  position: absolute;
+  z-index: -1;
+  top: -1%;
+  left: -2%;
+  animation: spin 2.5s linear infinite;
+}
+
+.card::after {
+  position: absolute;
+  content: "";
+  top: calc(var(--card-height) / 6);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 6));
+  background-image: linear-gradient(
+    var(--rotate),
+    #5ddcff,
+    #3c67e3 43%,
+    #4e00c2
+  );
+  opacity: 1;
+  transition: opacity 0.5s;
+  animation: spin 2.5s linear infinite;
+}
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+} */
+
+a {
+  color: #212534;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-top: 2rem;
+}
+
+/* Entire scrollbar */
+::-webkit-scrollbar {
+  width: 5px; /* Width of vertical scrollbar */
+  height: 5px; /* Height of horizontal scrollbar */
+}
+
+/* Scrollbar Track (Background) */
+::-webkit-scrollbar-track {
+  background: #222; /* Dark gray background */
+  border-radius: 10px; /* Rounded corners */
+}
+
+/* Scrollbar Handle (Draggable part) */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #ea00ff, #630060); /* Red gradient */
+  border-radius: 10px; /* Rounded edges */
+}
+
+/* Scrollbar Handle on Hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #8800ff, #630060); /* Brighter red */
+}

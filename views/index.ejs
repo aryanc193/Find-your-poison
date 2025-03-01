@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Find Your Poison</title>
+    <link rel="icon" type="image/png" href="/images/favicon.png"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Moon+Dance&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
+  </head>
+
+  <body>
+    <div class="card">
+      <h3>SHALL WHAT WE TODAY DRINK¿</h3>
+      <div class="main">
+        <div class="myForm">
+          <!-- <div class="filterAlc">
+            <label for="alcOption">Alcoholic?</label>
+            <button type="button" id="filterButton" class="active">YES</button>
+          </div> -->
+          <h5>Search By Any One of the following</h5>
+          <form id="myForm" method="get">
+            <div class="fields">
+              <label for="idInput">Id:</label>
+              <input type="text" id="idInput" name="id" />
+
+              <label for="nameInput">Name:</label>
+              <input type="text" id="nameInput" name="name" />
+
+              <!-- <label for="tagsInput">Tags:</label>
+              <input type="text" id="tagsInput" name="tags" />
+
+              <label for="categoryInput">Category:</label>
+              <input type="text" id="catInput" name="category" /> -->
+            </div>
+            <div>
+              <input id="get" type="submit" value="Search" />
+            </div>
+          </form>
+        </div>
+        <div class="drinkInfo">
+          <div id="drinkResults"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="/script.js"></script>
+</html>
